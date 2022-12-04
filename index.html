@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/styles/master.css">
+    <link rel="stylesheet" href="assets/styles/components.css">
+
+    <!-- Scripts -->
+    <script src="js/vendor/axios.min.js"></script>
+    <script src="js/vendor/feather.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/home.js"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- ============= Side Bar ============= -->
+    <aside class="sidebar">
+
+        <!-- Title -->
+        <div class="title">
+            <i data-feather="globe"></i>
+            Home
+        </div>
+
+        <!-- Profile -->
+        <div class="profile">
+            <img src="assets/icons/avatar.png" alt="avatar"/>
+            <div>Gamers Lounge</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div>Tasks <span id="totalCount">0</span></div>
+            <div>Active <span id="activeCount">0</span></div>
+            <div>Completed <span id="completedCount">0</span></div>
+        </div>
+
+    </aside>
+
+    <!-- ============= Right Section ============= -->
+    <section class="container">
+
+        <!-- ============= Navigation ============= -->
+        <header class="nav">
+            <div><a href="" data-active="true">Home</a></div>
+            <div><a href="views/todos">Todos</a></div>
+            <div><a href="views/setting">Setting</a></div>
+        </header>
+
+        <!-- ============= Main Content ============= -->
+        <main class="content">
+
+            <!-- Quotes Section -->
+            <div id="quoteCard" class="card column">
+
+                <div class="card-body">
+                    <div id="quoteContent" class="card-title light-text"></div>
+                </div>
+
+                <div class="card-action">
+                    <div id="quoteAuthor"></div>
+                </div>
+
+            </div>
+
+            <!-- Active Tasks Section -->
+            <div class="section">
+
+                <div class="section-title">
+                    Active Tasks
+                    <div class="section-title-action">
+                        <button class="button" onclick="addTaskHandler()"><i data-feather="plus"></i>Add Task</button>
+                    </div>
+                </div>
+
+                <div id="activeTasks" class="section-content"></div>
+            </div>
+
+        </main>
+
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* ===========================================================
+    Fonts
+=========================================================== */
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-SemiBold.ttf");
+    font-weight: 600;
+}
+
+/* ===========================================================
+    Variables
+=========================================================== */
+:root {
+    --bg-gradient: linear-gradient(to right, #292E49, #536976);
+
+    --shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+    --wrapper-shadow: rgb(30, 30, 30, 0.15) 0 0 5px;
+
+    --primary-color: #DDDDDD;
+    --secondary-color: #e7e7e7;
+    --divider-color: #9d9d9d;
+    --accent-color: #0075af;
+
+    --font-dark-1: #525457;
+    --font-dark-2: #292b2c;
+
+    --font-size-1: 1rem;
+    --font-size-2: 1.1rem;
+    --font-size-3: 1.2rem;
+    --font-size-4: 1.3rem;
+
+    --red: #e03434;
+    --green: #3c962e;
+}
+
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(to right, #2e3b44, #4C555C);
+
+    --shadow: rgba(0, 0, 0, 0.2) 0 1px 4px;
+    --wrapper-shadow: rgb(30, 30, 30, 0.5) 0 0 5px;
+
+    --primary-color: #32383D;
+    --secondary-color: #202529;
+    --divider-color: #4C555C;
+    --accent-color: #1BC6B4;
+
+    --font-dark-1: #7e9098;
+    --font-dark-2: #A1B4C4;
+
+    --font-size-1: 1rem;
+    --font-size-2: 1.1rem;
+    --font-size-3: 1.2rem;
+    --font-size-4: 1.3rem;
+
+    --red: #e03434;
+    --green: #3c962e;
+}
+
+
+/* ===========================================================
+    Reset
+=========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--bg-gradient);
+    color: var(--font-dark-1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+*::-webkit-scrollbar {
+    width: .8rem;
+}
+
+*::-webkit-scrollbar-track {
+    margin: 1rem 0;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--divider-color);
+    border-radius: 8px;
+}
+
+/* ===========================================================
+    Structure
+=========================================================== */
+.wrapper {
+    display: flex;
+    background: var(--primary-color);
+    width: 70vw;
+    height: 90vh;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--wrapper-shadow);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    border-right: var(--divider-color) solid 1px;
+    box-shadow: rgba(0, 0, 0, 0.08) 2px 0px 20px;
+}
+
+.container {
+    width: 80%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 8%;
+    border-bottom: var(--divider-color) solid 1px;
+    box-shadow: rgba(0, 0, 0, 0.08) 2px 0px 20px;
+    gap: 2rem;
+    padding-right: 4rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-height: 92%;
+    overflow-y: auto;
+
+}
+
+/* ===========================================================
+    Sidebar
+=========================================================== */
+
+/* Title Section */
+.sidebar .title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    font-size: var(--font-size-3);
+    user-select: none;
+}
+
+.sidebar .title svg {
+    color: var(--accent-color);
+    width: 30px;
+    height: 30px;
+    transition: transform .8s ease-in-out;
+    stroke-width: 1.4;
+}
+
+.sidebar .title svg:hover {
+    color: var(--accent-color);
+    transform: rotate(180deg);
+}
+
+/* Profile Section */
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.sidebar .profile img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    padding: 2px;
+    border: var(--accent-color) solid 2px;
+}
+
+/* Stats Section */
+.sidebar .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.sidebar .stats span {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* ===========================================================
+    Navigation
+=========================================================== */
+.nav a {
+    color: inherit;
+    display: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: var(--font-size-2);
+    transition: transform 150ms ease-in-out;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.nav a[data-active="true"] {
+    color: var(--accent-color);
+}
+
+/* ===========================================================
+    Dialog
+=========================================================== */
+.dialog-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-wrapper .dialog {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    margin: 10% auto;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-color);
+    width: 50%;
+}
+
+.dialog-wrapper .dialog .dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+    color: var(--font-dark-2);
+    border-bottom: var(--divider-color) solid 1px;
+    box-shadow: var(--shadow);
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+.dialog-wrapper .dialog .dialog-header svg {
+    color: var(--red);
+    height: 22px;
+}
+
+.dialog-wrapper .dialog .dialog-header svg:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+.dialog-wrapper .dialog .dialog-content {
+    padding: 1rem;
+}
+
+.dialog-wrapper .dialog .dialog-action {
+    padding: 1rem;
+    align-self: end;
+}
+
+/* ===========================================================
+    Helpers
+=========================================================== */

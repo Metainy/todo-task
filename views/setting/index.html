@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/styles/master.css">
+    <link rel="stylesheet" href="../../assets/styles/components.css">
+
+    <!-- Scripts -->
+    <script src="../../js/vendor/feather.min.js"></script>
+    <script defer src="../../js/main.js"></script>
+    <script defer src="../../js/setting.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- ============= Side Bar ============= -->
+    <aside class="sidebar">
+
+        <!-- Title -->
+        <div class="title">
+            <i data-feather="globe"></i>
+            Setting
+        </div>
+
+        <!-- Profile -->
+        <div class="profile">
+            <img src="../../assets/icons/avatar.png" alt="avatar"/>
+            <div>Gamers Lounge</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div>Tasks <span id="totalCount">0</span></div>
+            <div>Active <span id="activeCount">0</span></div>
+            <div>Completed <span id="completedCount">0</span></div>
+        </div>
+
+    </aside>
+
+    <!-- ============= Right Section ============= -->
+    <section class="container">
+
+        <!-- ============= Navigation ============= -->
+        <header class="nav">
+            <div><a href="../../index.html">Home</a></div>
+            <div><a href="../todos">Todos</a></div>
+            <div><a href="" data-active="true">Setting</a></div>
+        </header>
+
+        <!-- ============= Main Content ============= -->
+        <main class="content">
+
+            <!-- Utility Section -->
+            <div class="section">
+
+                <div class="section-title">Utility</div>
+
+                <div class="section-content no-shadow">
+
+                    <!-- Quote -->
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-title light-text">Toggle the inspirational quotes on home page.</div>
+                        </div>
+
+                        <div class="card-action">
+                            <label class="switch">
+                                <input id="quoteToggleBtn" type="checkbox" onchange="onQuoteChange(event)">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Theme -->
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-title light-text">Toggle dark mode.</div>
+                        </div>
+
+                        <div class="card-action">
+                            <label class="switch">
+                                <input id="themeToggleBtn" type="checkbox" onchange="onThemeChange(event)">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Data Section -->
+            <div class="section">
+
+                <div class="section-title">Data</div>
+
+                <div class="section-content no-shadow">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-title light-text">Completely remove all existing tasks.</div>
+                        </div>
+
+                        <div class="card-action">
+                            <button class="button" onclick="onResetClick()">Reset</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </section>
+
+</div>
+
+</body>
+</html>

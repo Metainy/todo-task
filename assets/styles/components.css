@@ -1,0 +1,240 @@
+/* ===========================================================
+    Section
+=========================================================== */
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1.5rem;
+}
+
+.section .section-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.section .section-title-action {
+    align-self: end;
+}
+
+.section .section-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    min-height: 3rem;
+    margin-top: .5rem;
+    padding: .5rem;
+    border: var(--divider-color) solid 1px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+
+    transition: transform 1.5s 0s, opacity 1.25s 0s;
+}
+
+.section .section-content.no-shadow {
+    border: none;
+    box-shadow: none;
+    margin-top: .1rem;
+}
+
+/* ===========================================================
+    Card
+=========================================================== */
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem 0;
+    padding: 1rem;
+    min-height: 2rem;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+    gap: 1rem;
+    transition: transform 1.5s 0s, opacity 1.25s 0s;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.card.column {
+    display: none;
+    flex-direction: column;
+}
+
+.card.column .card-body {
+    align-self: start;
+}
+
+.card.column .card-action {
+    align-self: end;
+}
+
+.card.remove {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+.card .card-title {
+    color: var(--font-dark-2);
+    margin-bottom: .2rem;
+}
+
+.card .card-title.light-text {
+    color: var(--font-dark-1);
+}
+
+.card .card-action {
+    display: flex;
+}
+
+/* ===========================================================
+    Button
+=========================================================== */
+.button {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+    background: none;
+    border: 2px solid var(--accent-color);
+    padding: .3rem .5rem;
+    color: var(--font-dark-1);
+    gap: .3rem;
+    font-size: var(--font-size-1);
+}
+
+.button:hover {
+    cursor: pointer;
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.button:hover svg {
+    color: var(--primary-color);
+}
+
+.button svg {
+    width: 22px;
+    color: var(--accent-color);
+}
+
+/* ===========================================================
+    Icon Button
+=========================================================== */
+.icon-button {
+    height: auto;
+    line-height: 0;
+    padding: .2rem;
+    text-align: center;
+    margin: 0 .2rem;
+    background: none;
+    border: none;
+}
+
+.icon-button svg {
+    width: 22px;
+    color: var(--accent-color);
+}
+
+.icon-button svg:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+.icon-button.red svg {
+    color: var(--red);
+}
+
+.icon-button.green svg {
+    color: var(--green);
+}
+
+/* ===========================================================
+    Toggle Button
+=========================================================== */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:focus + .slider {
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 10px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* ===========================================================
+    Text Input
+=========================================================== */
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+    gap: .4rem;
+    font-size: var(--font-size-1);
+    color: var(--font-dark-2);
+}
+
+.input input[type="text"] {
+    height: 2.2rem;
+    font-size: var(--font-size-1);
+    color: var(--font-dark-1);
+    padding: .4rem;
+    border: none;
+    border-radius: 2px;
+    outline: 2px solid var(--divider-color);
+    box-shadow: var(--shadow);
+}
+
+.input input[type="text"]:focus-visible {
+    caret-color: var(--accent-color);
+    outline: 2px solid var(--accent-color);
+}
