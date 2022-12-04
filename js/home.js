@@ -5,7 +5,7 @@
  */
 async function getRandomQuote() {
 
-    const URL = "http://api.quotable.io/random?tags=technology";
+    const URL = "https://api.quotable.io/random?tags=technology";
 
     const { data: { author, content } } = await axios.get(URL);
 
